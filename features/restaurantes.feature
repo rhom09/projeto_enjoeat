@@ -5,27 +5,25 @@ Funcionalidade: Restaurantes
     Sendo um usuário que deseja pedir comida
     Posso acessar a lista de restaurantes
 
-    Contexto: Lista de restaurantes
-        Dado que eu tenha uma lista de restaurantes
-
-    Cenario: Todos os restaurantes
-
-        
-        Quando acesso a lista de restaurantes
-        Então vejo todas as opções disponíveis
-    
-    Cenario: Categorias
+    Esquema do Cenario: Restaurantes disponíveis
 
         Quando acesso a lista de restaurantes
-        Então cada restaurante deve exibir sua categoria
+        Então cada restaurante ter <id> <name> <category> <delivery_time> <rating>
 
-    @temp
-    Cenario: Tempo de entrega
+         Exemplos: 
+      | id | name             | category     | delivery_time | rating |
+      | 0  | "Bread & Bakery" | "Padaria"    | "25 minutos"  | 4.9    |
+      | 1  | "Burger House"   | "Hamburgers" | "30 minutos"  | 3.5    |
+      | 2  | "Coffee Corner"  | "Cafeteria"  | "20 minutos"  | 4.8    |
+      | 3  | "Green Food"     | "Saudável"   | "40 minutos"  | 4.1    |
+    # | 4  | "Ice Cream"      | "Sorvetes"   | "1 hora"      | 0      |
+      | 5  | "Tasty Treats"   | "Doces"      | "20 minutos"  | 4.4    |
 
-        Quando acesso a lista de restaurantes
-        Então cada restaurante deve exibir o tempo de entrega
 
-    Cenario: Nota de avaliação
 
-        Quando acesso a lista de restaurantes
-        Então cada restaurante deve exibir sua nota de avaliação
+
+
+
+
+
+
