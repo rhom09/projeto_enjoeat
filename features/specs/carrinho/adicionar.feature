@@ -1,5 +1,8 @@
-#Language: pt
+# language: pt
 
+# Com essa tag como HOOK(gancho), ela irá acessar a pagina exata
+# Para a feature
+@bread_bakery
 Funcionalidade: Adicionar ao carrinho
     Para que possa finalizar uma compra
     Sendo um cliente que já decidiu o que comer

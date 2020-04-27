@@ -1,4 +1,4 @@
-#Language: pt
+# language: pt
 
 Funcionalidade: Remover do carrinho
     Para que eu possa manter meu carrinho apenas com itens desejados
