@@ -20,5 +20,12 @@ Então("{int} unidade deste item deve ser adicionado ao carrinho") do |quantity|
   expect(cart).to have_text "(#{quantity}x) #{@product_name}"
 end
 
-Então("o valor total deve ser de {string}") do |string|
+Então("o valor total deve ser de {string}") do |amount|
+  cart = find("#cart")
+  # Com uma busca de query $(#cart tr:contains("Total:") td) achamos na tabela do carrinho
+  # E passamos para o formato do CAPYBARA e guardamos na variavel total
+  total = cart.find("tr", text: "Total:").find("td")
+  # E a validação é feita no texto da variavel total que é o valor da tr/td
+  expect(total.text).to have_text amount
+  sleep 5
 end
