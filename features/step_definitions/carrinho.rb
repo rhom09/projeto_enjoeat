@@ -6,13 +6,17 @@ Dado("o valor do produto é de {string}") do |value|
   product_value = value
 end
 
-Quando("eu adiciono {int} unidade") do |int|
-  # Para achar o btn de add, foi usado essa tecnica:
-  # Primeiro acha o elemento 'Pai' e depois dentro dele mesmo faz outro FIND
-  find(".menu-item-info-box", text: @product_name.upcase).find(".add-to-cart").click
+Quando("eu adiciono {int} unidade\\(s)") do |quantity|
+  # Para adicionar mais de item no carrinho usamos o 'times' do Ruby
+  # Que vai rodar x valor para cada qunatidade adiconada no cenario
+  quantity.times do
+    # Para achar o btn de add, foi usado essa tecnica:
+    # Primeiro acha o elemento 'Pai' e depois dentro dele mesmo faz outro FIND
+    find(".menu-item-info-box", text: @product_name.upcase).find(".add-to-cart").click
+  end
 end
 
-Então("{int} unidade deste item deve ser adicionado ao carrinho") do |quantity|
+Então("deve ser adicionado {int} unidade\\(s) deste item") do |quantity|
   # cria uma variavel com o elemento do carrinho
   cart = find("#cart")
   # Verificação feita com interpolação de STRING (no codigo = 1x Cup Cake)
