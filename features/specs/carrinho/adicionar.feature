@@ -33,4 +33,4 @@ Funcionalidade: Adicionar ao carrinho
             | Pão Artesanal Italiano | R$ 12,50 | 1        |
         Quando eu adiciono todos os itens
         Então vejo todos os itens no carrinho
-        E o valor total deve ser de "R$ 27,10"           
+        E o valor total deve ser de "R$ 29,60"           
