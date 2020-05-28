@@ -58,3 +58,29 @@ Então("vejo todos os itens no carrinho") do
     expect(cart).to have_text "(#{p["quantity"]}x) #{p["name"]}"
   end
 end
+
+# Remover Itens
+
+Dado("que eu tenho os seguintes itens no carrinho:") do |table|
+  @product_list = table.hashes
+  @product_list.each do |p|
+    p["quantity"].to_i.times do
+      find(".menu-item-info-box", text: p["name"].upcase).find(".add-to-cart").click
+    end
+  end
+end
+
+### USAR COM O CENARIO PARA REMOVER UM ITEM SÓ ####
+Quando("eu removo somente o item {int}") do |item|
+  # Uso o find para achar o "pai"(cart)
+  cart = find("#cart")
+  # E dentro de cart busco o elemento que quero no caso o item 1
+  # Com o all pego tudo dentro de cart e com o[item] o indice desse array e por fim click no x
+  cart.all("table tbody tr")[item].find(".danger").click
+end
+
+### USAR COM O ESQUEMA DE CENARIO ###
+Quando("eu removo somente o {int}") do |item|
+  cart = find("#cart")
+  cart.all("table tbody tr")[item].find(".danger").click
+end

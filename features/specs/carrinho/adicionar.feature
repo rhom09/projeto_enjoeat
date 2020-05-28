@@ -23,7 +23,7 @@ Funcionalidade: Adicionar ao carrinho
         Quando eu adiciono 2 unidade(s)
         Então deve ser adicionado 2 unidade(s) deste item
         E o valor total deve ser de "R$ 5,00"
-    @temp
+    
     Cenario: Adicionar varios itens
 
         Dado que os produtos desejados são:
