@@ -7,7 +7,7 @@ Funcionalidade: Adicionar ao carrinho
     Para que possa finalizar uma compra
     Sendo um cliente que já decidiu o que comer
     Posso adicionar itens ao meu carrinho
-    
+
     Cenario: Adicionar 1 unidade
 
         Dado que o produto desejado é "Cup Cake"
