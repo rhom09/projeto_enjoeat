@@ -84,3 +84,16 @@ Quando("eu removo somente o {int}") do |item|
   cart = find("#cart")
   cart.all("table tbody tr")[item].find(".danger").click
 end
+
+Quando("eu removo todos os itens") do
+  # @product_list.each_with_index do |value, idx|
+  #   cart = find("#cart")
+  #   cart.all("table tbody tr")[idx].find(".danger").click
+  # end
+  find(".btn-danger").click
+end
+
+Então("vejo a seguinte mensagem no carrinho {string}") do |message|
+  cart = find("#cart")
+  expect(cart).to have_text message
+end
